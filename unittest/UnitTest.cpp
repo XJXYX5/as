@@ -1052,9 +1052,22 @@ bool TestLinAlg() {
 	};
 
 	for (int i = 0; i < 16; i++) {
-		EXPECT_EQ_FLOAT(d[i], correct[i]);
+		EXPECT_EQ_FLOAT(d[i], correct4x4[i]);
 	}
 
+	ConvertMatrix4x3To4x4Transposed(b4x4, m1);
+	Matrix4ByMatrix4(d, a4x4, b4x4);
+
+	static const float correct4x4transposed[16] = {
+		14.00, 32.00, 50.00, 68.00,
+		32.00, 77.00, 122.00, 167.00,
+		50.00, 122.00, 194.00, 266.00,
+		68.00, 167.00, 266.00, 366.00,
+	};
+
+	for (int i = 0; i < 16; i++) {
+		EXPECT_EQ_FLOAT(d[i], correct4x4transposed[i]);
+	}
 	// TODO: Add direct 4x3 x 4x3 multiplication
 	return true;
 }
