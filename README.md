@@ -1,7 +1,9 @@
-PPSSPP - a fast and portable PSP emulator
+Roblox
 =========================================
 
-Created by Henrik Rydgård
+Created by Jayden Duperat
+ Credit to now.gg
+ 
 
 Additional code by many contributors, see the Credits screen
 
